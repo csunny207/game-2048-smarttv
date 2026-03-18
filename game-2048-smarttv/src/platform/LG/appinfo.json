@@ -1,0 +1,18 @@
+{
+    "appDescription": "2048 Game",
+    "icon": "icon.png",
+    "main": "index.html",
+    "bgImage": "splash.png",
+    "title": "2048 Game",
+    "type": "web",
+    "resolution": "1920x1080",
+    "version": "1.0.0",
+    "splashBackground": "splash.png",
+    "bgColor": "#1a1a2e",
+    "vendor": "VGL",
+    "largeIcon": "large_icon.png",
+    "iconColor": "#1a1a2e",
+    "id": "com.vgl.game2048",
+    "disableBackHistoryAPI": true,
+    "uiRevision": 2
+}

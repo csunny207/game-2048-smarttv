@@ -1,0 +1,37 @@
+// Splash page - 1920x1080 resolution, units in vw/vh
+// 100vw = 1920px, 100vh = 1080px
+
+.splash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #1a1a2e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.splash__title {
+  font-size: 7.29vw; // 140px @ 1920
+  font-weight: bold;
+  color: #edc22e;
+  font-family: Arial, sans-serif;
+  letter-spacing: 0.52vw; // 10px
+}
+
+.splash__subtitle {
+  font-size: 2.08vw; // 40px @ 1920
+  color: #8f8f8f;
+  font-family: Arial, sans-serif;
+  margin-top: 2.22vh; // 24px @ 1080
+}
+
+.splash__loading {
+  font-size: 1.46vw; // 28px @ 1920
+  color: #555555;
+  font-family: Arial, sans-serif;
+  margin-top: 11.11vh; // 120px @ 1080
+}

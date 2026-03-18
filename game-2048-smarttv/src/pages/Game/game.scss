@@ -1,0 +1,316 @@
+// Game page - 1920x1080 resolution, units in vw/vh
+// 100vw = 1920px, 100vh = 1080px
+
+.game {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-color: #1a1a2e;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #f0f0f0;
+}
+
+// ---- Left Panel ----
+.game-left-panel {
+  width: 62.5vw; // 1200px
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2.5vh 0;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.game-title {
+  font-size: 4.17vw; // 80px
+  font-weight: bold;
+  color: #edc22e;
+  letter-spacing: 0.42vw; // 8px
+}
+
+.game-score-bar {
+  margin-top: 1.2vh;
+  display: flex;
+}
+
+.game-score-box + .game-score-box {
+  margin-left: 1.25vw; // 24px (gap alternative for Smart TV)
+}
+
+.game-score-box {
+  background-color: #bbada0;
+  border-radius: 0.93vh; // 10px
+  padding: 0.93vh 1.88vw; // 10px 36px
+  text-align: center;
+  min-width: 8.33vw; // 160px
+}
+
+.game-score-label {
+  font-size: 1.67vh; // 18px
+  color: #eee4da;
+  font-weight: bold;
+  letter-spacing: 0.1vw; // 2px
+}
+
+.game-score-value {
+  font-size: 3.33vh; // 36px
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 0.37vh; // 4px
+}
+
+// Limit canvas display size so full column (title + scores + canvas + buttons + dir + hint) fits in 100vh
+.game-canvas {
+  display: block;
+  margin-top: 1.5vh;
+  width: 52vh;
+  height: 52vh;
+}
+
+.game-status-text {
+  font-size: 3.7vh; // 40px
+  font-weight: bold;
+  margin-top: 1.3vh; // 14px
+
+  &--won {
+    color: #6ecb63;
+  }
+
+  &--over {
+    color: #f65e3b;
+  }
+}
+
+.game-button-row {
+  margin-top: 1.2vh;
+  display: flex;
+}
+
+.game-button-row .game-btn + .game-btn {
+  margin-left: 1.04vw; // 20px (gap alternative for Smart TV)
+}
+
+.game-btn {
+  padding: 1.48vh 2.29vw; // 16px 44px
+  font-size: 2.22vh; // 24px
+  font-weight: bold;
+  border-radius: 0.93vh; // 10px
+  color: #ffffff;
+  background-color: #8f7a66;
+  border: 0.37vh solid transparent; // 4px
+  cursor: pointer;
+  outline: none;
+  margin-right: 1.25vw; // 24px
+
+  &--focused {
+    background-color: #f65e3b;
+    border-color: #ffffff;
+  }
+}
+
+.game-dir-controls {
+  margin-top: 1.3vh; // 14px
+}
+
+.game-dir-row-center {
+  text-align: center;
+}
+
+.game-dir-btn {
+  width: 5vw; // 54px (approx)
+  height: 5vh; // 54px (approx)
+  font-size: 2.22vh; // 24px
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #aaaaaa;
+  border: 0.09vh solid rgba(255, 255, 255, 0.15);
+  border-radius: 0.74vh; // 8px
+  cursor: pointer;
+  margin: 0.19vh 0.26vw; // 2px 5px
+  line-height: 5vh;
+  padding: 0;
+
+  &--focused {
+    background-color: rgba(245, 94, 59, 0.5);
+    color: #ffffff;
+    border-color: #ffffff;
+  }
+}
+
+.game-hint {
+  font-size: 1.85vh; // 20px
+  color: #555555;
+  margin-top: 1.3vh; // 14px
+}
+
+// ---- Right Panel ----
+.game-right-panel {
+  width: 37.5vw; // 720px
+  height: 100vh;
+  background-color: #16213e;
+  padding: 5.56vh 2.6vw; // 60px 50px
+  display: flex;
+  flex-direction: column;
+}
+
+.game-panel-title {
+  font-size: 3.33vh; // 36px
+  font-weight: bold;
+  color: #edc22e;
+  letter-spacing: 0.16vw; // 3px
+  margin-bottom: 3.33vh; // 36px
+}
+
+.game-stat-row {
+  margin-bottom: 1.67vh; // 18px
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.game-stat-label {
+  font-size: 2.41vh; // 26px
+  color: #a0a0a0;
+}
+
+.game-stat-value {
+  font-size: 2.78vh; // 30px
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.game-divider {
+  height: 0.09vh; // 1px
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 2.96vh 0; // 32px 0
+}
+
+.game-history-title {
+  font-size: 2.59vh; // 28px
+  font-weight: bold;
+  color: #bbbbbb;
+  letter-spacing: 0.1vw; // 2px
+  margin-bottom: 2.22vh; // 24px
+}
+
+.game-history-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.game-history-empty {
+  font-size: 2.04vh; // 22px
+  color: #555555;
+  font-style: italic;
+}
+
+.game-history-item {
+  padding: 1.3vh 0; // 14px 0
+  border-bottom: 0.09vh solid rgba(255, 255, 255, 0.06);
+  font-size: 2.04vh; // 22px
+  display: flex;
+  align-items: center;
+}
+
+.game-history-index {
+  color: #777777;
+  margin-right: 1.04vw; // 20px
+  width: 2.29vw; // 44px
+  flex-shrink: 0;
+}
+
+.game-history-score {
+  color: #f0f0f0;
+  margin-right: 1.04vw;
+  min-width: 8.33vw; // 160px
+  flex-shrink: 0;
+}
+
+.game-history-result {
+  font-weight: bold;
+  margin-right: 1.04vw;
+  min-width: 6.77vw; // 130px
+  flex-shrink: 0;
+
+  &--win {
+    color: #6ecb63;
+  }
+
+  &--lose {
+    color: #f65e3b;
+  }
+}
+
+.game-history-date {
+  color: #777777;
+  font-size: 1.85vh; // 20px
+}
+
+// ---- Exit confirmation popup ----
+.game-exit-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.game-exit-popup {
+  background-color: #16213e;
+  border-radius: 1.85vh;
+  padding: 4vh 4vw;
+  min-width: 25vw;
+  box-shadow: 0 0 5vw rgba(0, 0, 0, 0.5);
+  border: 0.19vh solid rgba(255, 255, 255, 0.1);
+}
+
+.game-exit-message {
+  font-size: 2.78vh;
+  color: #f0f0f0;
+  margin-bottom: 3vh;
+  text-align: center;
+}
+
+.game-exit-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.game-exit-buttons .game-exit-btn + .game-exit-btn {
+  margin-left: 2vw; // gap alternative for Smart TV
+}
+
+.game-exit-btn {
+  padding: 1.3vh 2.6vw;
+  font-size: 2.22vh;
+  font-weight: bold;
+  border-radius: 0.93vh;
+  color: #ffffff;
+  background-color: #8f7a66;
+  border: 0.37vh solid transparent;
+  cursor: pointer;
+  outline: none;
+
+  &--focused {
+    background-color: #f65e3b;
+    border-color: #ffffff;
+  }
+
+  &--ok {
+    background-color: #6ecb63;
+
+    &.game-exit-btn--focused {
+      background-color: #f65e3b;
+    }
+  }
+}
